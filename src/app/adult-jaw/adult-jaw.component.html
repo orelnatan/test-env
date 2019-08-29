@@ -1,0 +1,62 @@
+
+<div class="adultjaw-main">
+    <div class="adultjaw-jaw">
+        <div class="adultjaw-image-wrapper">
+            <img class="adultjaw-img" src="../../assets/images/png/jaws-adult.png"/>
+        </div>
+        
+        <div class="adultjaw-tooth {{'tooth-' + i}}" *ngFor="let tooth of teeth; let i=index">
+            <tooth [tooth]="tooth" (onChange)="teethToggle.emit($event)"></tooth>
+        </div>
+
+        <div class="adultjaw-smear {{'smear-' + i}}" *ngFor="let smear of smears; let i=index">
+            <smear-button [label]="smear.label" [id]="smear.id" [selected]="smear.selected"></smear-button>
+        </div>
+
+        <div class="adultjaw-tooth adultjaw-special-tooth adultjaw-special-tooth-1">
+            <img class="adultjaw-img" src="../../assets/images/png/tooth88.png"/>
+        </div>
+
+        <div class="adultjaw-tooth adultjaw-special-tooth adultjaw-special-tooth-2">
+            <img class="adultjaw-img" src="../../assets/images/png/tooth88.png"/>
+        </div>
+
+        <div class="adultjaw-jaw-range adultjaw-upperjaw-rangebtn">
+            <range-button #upperrangebtn
+                [label]="ranges[10].label"
+                [isPressed]="isRangeMarked(ranges[10].range)" 
+                (onClick)="toogleRange(ranges[10].range, upperrangebtn.isPressed)">
+            </range-button>
+        </div>
+
+        <div class="adultjaw-jaw-range adultjaw-bottomjaw-rangebtn">
+            <range-button #bottomrangebtn
+                [label]="ranges[11].label"
+                [isPressed]="isRangeMarked(ranges[11].range)" 
+                (onClick)="toogleRange(ranges[11].range, bottomrangebtn.isPressed)">
+            </range-button>
+        </div>
+    </div>
+
+    <div class="adultjaw-range-controls">
+        <div class="adultjaw-ranges">
+            <div class="adultjaw-range-button" *ngFor="let range of ranges | slice: 0 : 4">
+                <range-button #rangebtn
+                    [label]="range.label"
+                    [isPressed]="isRangeMarked(range.range)" 
+                    (onClick)="toogleRange(range.range, rangebtn.isPressed)">
+                </range-button>
+            </div>
+        </div>
+        <div class="adultjaw-ranges">
+            <div class="adultjaw-range-button" *ngFor="let range of ranges | slice: 4 : 10">
+                <range-button #rangebtn
+                    [label]="range.label" 
+                    [isPressed]="isRangeMarked(range.range)" 
+                    (onClick)="toogleRange(range.range, rangebtn.isPressed)">
+                </range-button>
+            </div>
+        </div>
+    </div>
+</div>
+

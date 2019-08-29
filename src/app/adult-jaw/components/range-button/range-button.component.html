@@ -1,0 +1,10 @@
+
+<div class="rangebutton-main">
+    <button class="rangebutton-button" 
+        [ngClass]="{'active': !disabled, 'un-active': disabled, 'prassed': isPressed}"
+        [disabled]="disabled" 
+        (click)="onClick.emit()">
+        
+        {{label}}
+    </button>
+</div>

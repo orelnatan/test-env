@@ -1,0 +1,10 @@
+
+<div class="smearbutton-main">
+    <button class="smearbutton-button" 
+        [ngClass]="{'active': !disabled, 'un-active': disabled, 'selected': selected}"
+        [disabled]="disabled" 
+        (click)="selected= selected ? false : true; onClick.emit(id)">
+        
+        {{label}}
+    </button>
+</div>

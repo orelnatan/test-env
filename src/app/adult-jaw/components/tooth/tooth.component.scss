@@ -1,0 +1,56 @@
+
+.tooth-main {
+    display: block;
+
+    .tooth-checkbox {
+        display: none;
+    }
+
+    .tooth-label-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+    }
+
+    .tooth-label {
+        font-weight: bold;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+    }
+}
+
+.un-active {
+    .tooth-label {
+        cursor: no-drop;
+    }
+    
+    background: #eee;
+    opacity: 0.5;
+}
+
+.active {
+    .tooth-label {
+        cursor: pointer;
+    }
+
+    &:hover {
+        background: #222;
+        color: white;
+    }
+}
+
+.un-checked {
+    background: transparent;
+    color: black;
+}
+
+.checked {
+    background: #222;
+    color: white;
+}

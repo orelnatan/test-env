@@ -1,0 +1,23 @@
+
+<div class="tooth-main">
+    <div class="tooth-checkbox-wrapper">
+        <input
+            class="tooth-checkbox"
+            type="checkbox" 
+            id="checkbox#{{tooth.id}}"
+            [disabled]="tooth.disabled" 
+            [checked]="tooth.checked"
+            (change)="tooth.checked=$event.target.checked; 
+                      onChange.emit(tooth)"
+        >
+    </div>
+    <div class="tooth-label-wrapper" [ngClass]="{'checked': tooth.checked, 'un-checked': !tooth.checked, 'active': !tooth.disabled, 'un-active': tooth.disabled}">
+        <label 
+            for="checkbox#{{tooth.id}}"
+            class="tooth-label">
+            
+            {{tooth.label}}
+        </label>
+    </div>
+</div>
+
