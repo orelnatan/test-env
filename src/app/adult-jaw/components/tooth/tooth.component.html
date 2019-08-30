@@ -4,19 +4,18 @@
         <input
             class="tooth-checkbox"
             type="checkbox" 
-            id="checkbox#{{tooth.id}}"
-            [disabled]="tooth.disabled" 
-            [checked]="tooth.checked"
-            (change)="tooth.checked=$event.target.checked; 
-                      onChange.emit(tooth)"
+            id="checkbox#{{id}}"
+            [disabled]="disabled" 
+            [checked]="checked"
+            (change)="onChange.emit(id)"
         >
     </div>
-    <div class="tooth-label-wrapper" [ngClass]="{'checked': tooth.checked, 'un-checked': !tooth.checked, 'active': !tooth.disabled, 'un-active': tooth.disabled}">
+    <div class="tooth-label-wrapper" [ngClass]="{'checked': checked, 'un-checked': !checked, 'active': !disabled, 'un-active': disabled}">
         <label 
-            for="checkbox#{{tooth.id}}"
+            for="checkbox#{{id}}"
             class="tooth-label">
             
-            {{tooth.label}}
+            {{label}}
         </label>
     </div>
 </div>

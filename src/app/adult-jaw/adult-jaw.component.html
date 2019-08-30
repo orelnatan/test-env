@@ -6,11 +6,25 @@
         </div>
         
         <div class="adultjaw-tooth {{'tooth-' + i}}" *ngFor="let tooth of teeth; let i=index">
-            <tooth [tooth]="tooth" (onChange)="teethToggle.emit($event)"></tooth>
+            <tooth
+                [id]="tooth.id"
+                [label]="tooth.label"
+                [checked]="selectedTeeth.indexOf(tooth.id) != -1"
+                (onChange)="
+                    handleChange(selectedTeeth, $event);
+                    teethChange.emit(selectedTeeth)">
+            </tooth>
         </div>
 
         <div class="adultjaw-smear {{'smear-' + i}}" *ngFor="let smear of smears; let i=index">
-            <smear-button [label]="smear.label" [id]="smear.id" [selected]="smear.selected"></smear-button>
+            <smear-button
+                [id]="smear.id" 
+                [label]="smear.label"  
+                [selected]="selectedSmears.indexOf(smear.id) != -1"
+                (onClick)="
+                    handleChange(selectedSmears, $event);
+                    smearChange.emit(selectedSmears)">
+            </smear-button>
         </div>
 
         <div class="adultjaw-tooth adultjaw-special-tooth adultjaw-special-tooth-1">
@@ -24,16 +38,16 @@
         <div class="adultjaw-jaw-range adultjaw-upperjaw-rangebtn">
             <range-button #upperrangebtn
                 [label]="ranges[10].label"
-                [isPressed]="isRangeMarked(ranges[10].range)" 
-                (onClick)="toogleRange(ranges[10].range, upperrangebtn.isPressed)">
+                [pressed]="isTeethRangeMarked(ranges[10].range)"
+                (onClick)="toogleTeethRange(ranges[10].range, upperrangebtn.pressed)">
             </range-button>
         </div>
 
         <div class="adultjaw-jaw-range adultjaw-bottomjaw-rangebtn">
             <range-button #bottomrangebtn
                 [label]="ranges[11].label"
-                [isPressed]="isRangeMarked(ranges[11].range)" 
-                (onClick)="toogleRange(ranges[11].range, bottomrangebtn.isPressed)">
+                [pressed]="isTeethRangeMarked(ranges[11].range)"
+                (onClick)="toogleTeethRange(ranges[11].range, bottomrangebtn.pressed)">
             </range-button>
         </div>
     </div>
@@ -43,17 +57,17 @@
             <div class="adultjaw-range-button" *ngFor="let range of ranges | slice: 0 : 4">
                 <range-button #rangebtn
                     [label]="range.label"
-                    [isPressed]="isRangeMarked(range.range)" 
-                    (onClick)="toogleRange(range.range, rangebtn.isPressed)">
+                    [pressed]="isTeethRangeMarked(range.range)" 
+                    (onClick)="toogleTeethRange(range.range, rangebtn.pressed)">
                 </range-button>
             </div>
         </div>
         <div class="adultjaw-ranges">
             <div class="adultjaw-range-button" *ngFor="let range of ranges | slice: 4 : 10">
                 <range-button #rangebtn
-                    [label]="range.label" 
-                    [isPressed]="isRangeMarked(range.range)" 
-                    (onClick)="toogleRange(range.range, rangebtn.isPressed)">
+                    [label]="range.label"
+                    [pressed]="isTeethRangeMarked(range.range)" 
+                    (onClick)="toogleTeethRange(range.range, rangebtn.pressed)">
                 </range-button>
             </div>
         </div>

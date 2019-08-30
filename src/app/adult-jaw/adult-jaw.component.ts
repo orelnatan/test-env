@@ -1,14 +1,18 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ITooth } from './components/tooth/tooth.component';
+
+interface ITooth {
+    label: string;
+    id: number
+}
+
+interface ISmear {
+    label: string;
+    id: number,
+}
 
 interface IRange {
     label: string;
     range: Array<number>
-}
-
-export interface ISmear {
-    label: string;
-    id: number,
 }
 
 @Component({
@@ -18,213 +22,151 @@ export interface ISmear {
 })
 
 export class AdultJaw {
-    @Input() teeth: Array<ITooth> = [
+    @Input() selectedTeeth: Array<number> = [];
+    @Input() selectedSmears: Array<number> = [];
+
+    @Output() teethChange: EventEmitter<number[]> = new EventEmitter();
+    @Output() smearChange: EventEmitter<number[]> = new EventEmitter();
+
+    teeth: Array<ITooth> = [
         {
             id: 18,
             label: "18",
-            checked: false,
-            disabled: false
         },
         {
             id: 17,
             label: "17",
-            checked: false,
-            disabled: false,
         },
         {
             id: 16,
             label: "16",
-            checked: false,
-            disabled: false,
         },
         {
             id: 15,
             label: "15",
-            checked: false,
-            disabled: false,
         },
         {
             id: 14,
             label: "14",
-            checked: false,
-            disabled: false,
         },
         {
             id: 13,
             label: "13",
-            checked: false,
-            disabled: false,
         },
         {
             id: 12,
             label: "12",
-            checked: false,
-            disabled: false,
         },
         {
             id: 11,
             label: "11",
-            checked: false,
-            disabled: false,
         },
         {
             id: 21,
             label: "21",
-            checked: false,
-            disabled: false,
         },
         {
             id: 22,
             label: "22",
-            checked: false,
-            disabled: false,
         },
         {
             id: 23,
             label: "23",
-            checked: false,
-            disabled: false,
         },
         {
             id: 24,
             label: "24",
-            checked: false,
-            disabled: false,
         },
         {
             id: 25,
             label: "25",
-            checked: false,
-            disabled: false,
         },
         {
             id: 26,
             label: "26",
-            checked: false,
-            disabled: false,
         },
         {
             id: 27,
             label: "27",
-            checked: false,
-            disabled: false,
         },
         {
             id: 28,
             label: "28",
-            checked: false,
-            disabled: false,
         },
         {
             id: 38,
             label: "38",
-            checked: false,
-            disabled: false,
         },
         {
             id: 37,
             label: "37",
-            checked: false,
-            disabled: false,
         },
         {
             id: 36,
             label: "36",
-            checked: false,
-            disabled: false,
         },
         {
             id: 35,
             label: "35",
-            checked: false,
-            disabled: false,
         },
         {
             id: 34,
             label: "34",
-            checked: false,
-            disabled: false,
         },
         {
             id: 33,
             label: "33",
-            checked: false,
-            disabled: false,
         },
         {
             id: 32,
             label: "32",
-            checked: false,
-            disabled: false,
         },
         {
             id: 31,
             label: "31",
-            checked: false,
-            disabled: false,
         },
         {
             id: 41,
             label: "41",
-            checked: false,
-            disabled: false,
         },
         {
             id: 42,
             label: "42",
-            checked: false,
-            disabled: false,
         },
         {
             id: 43,
             label: "43",
-            checked: false,
-            disabled: false,
         },
         {
             id: 44,
             label: "44",
-            checked: false,
-            disabled: false,
         },
         {
             id: 45,
             label: "45",
-            checked: false,
-            disabled: false,
         },
         {
             id: 46,
             label: "46",
-            checked: false,
-            disabled: false,
         },
         {
             id: 47,
             label: "47",
-            checked: false,
-            disabled: false,
         },
         {
             id: 48,
             label: "48",
-            checked: false,
-            disabled: false,
         },
         {
             id: 88,
             label: "88",
-            checked: false,
-            disabled: false,
         },
         {
             id: 99,
             label: "99",
-            checked: false,
-            disabled: false,
         },
     ];
-    @Input() smears: Array<ISmear> = [
+    smears: Array<ISmear> = [
         {
            label: "CL-V",
            id: 212,
@@ -250,10 +192,6 @@ export class AdultJaw {
             id: 100, 
         },
     ];
-    
-    @Output() teethToggle: EventEmitter<ITooth> = new EventEmitter();
-    @Output() smearToggle: EventEmitter<number> = new EventEmitter();
-
     ranges: Array<IRange> = [
         {
             label: "11-18",
@@ -305,33 +243,51 @@ export class AdultJaw {
         },
     ]
     
-    isRangeMarked(range: Array<number>): boolean {
+    handleChange(collection: Array<number>, itemId: number): void {
+        collection.indexOf(
+            itemId
+        ) == -1 ? this.selectItem(collection, itemId) : this.unSelectItem(collection, itemId);
+    }
+
+    selectItem(collection: Array<number>, itemId: number): void {
+        collection.push(
+            itemId
+        );
+    }
+
+    unSelectItem(collection: Array<number>, itemId: number): void {
+        collection.splice(
+            collection.indexOf(itemId),
+            1
+        )
+    }
+
+    isTeethRangeMarked(range: Array<number>): boolean {
         return range.every(
             (value: number): boolean => { 
-                return this.teeth.filter(
-                    (tooth: ITooth): ITooth => {
-                        if(tooth.checked) {
-                            return tooth;
-                        } 
-                    }
-                ).map(
-                    (tooth: ITooth): number => tooth.id
-                ).indexOf(value) != -1; 
+                return this.selectedTeeth.indexOf(
+                    value
+                ) != -1; 
             }
         );
     }
 
-    toogleRange(range: Array<number>, isPressed: boolean): void {
-        this.teeth.forEach(
-            (tooth: ITooth): void => {
-                if(range.indexOf(tooth.id) != -1) {     
-                    tooth.checked = !isPressed;
-
-                    this.teethToggle.emit(tooth);
+    toogleTeethRange(range: Array<number>, pressed: boolean): void {
+        range.forEach(
+            (toothId: number) => {
+                if(!pressed) {
+                    this.selectedTeeth.indexOf(
+                        toothId
+                    ) == -1 ? this.selectItem(this.selectedTeeth, toothId) : null; 
+                } else {
+                    this.unSelectItem(this.selectedTeeth, toothId);
                 }
-        });
+            }
+        );
+        this.teethChange.emit(this.selectedTeeth);
     }
 
-
 }
+
+              
 

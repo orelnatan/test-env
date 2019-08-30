@@ -3,8 +3,11 @@
     <div class="home-body">
         
         <div class="adultjaw-wrapper">
-            <adult-jaw 
-                (teethToggle)="onTeethToggle($event)">
+            <adult-jaw
+                [selectedTeeth]="selectedTeeth"
+                [selectedSmears]="selectedSmears" 
+                (teethChange)="onTeethChange($event)"
+                (smearChange)="onSmearChange($event)">
             </adult-jaw>
         </div>
 

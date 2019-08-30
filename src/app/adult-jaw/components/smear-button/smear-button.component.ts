@@ -7,10 +7,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class SmearButton {
-    @Input() disabled: boolean;
-    @Input() label: string;
-    @Input() selected: boolean;
     @Input() id: number;
-
+    @Input() label: string;
+    @Input() disabled: boolean;
+    @Input() selected: boolean;
+    
     @Output() onClick: EventEmitter<number> = new EventEmitter();
 }

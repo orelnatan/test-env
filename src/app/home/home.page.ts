@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { ITooth } from '../adult-jaw/components/tooth/tooth.component';
-import { ISmear } from '../adult-jaw/adult-jaw.component';
 
 @Component({
   selector: 'home',
@@ -9,11 +7,20 @@ import { ISmear } from '../adult-jaw/adult-jaw.component';
 })
 
 export class Home {
+    selectedTeeth = [];
+    selectedSmears = [];
     
-    
+    onTeethChange(teeth: Array<number>): void {
+        if(!teeth.length) {
+            this.selectedSmears = [];
+        }
+    }
 
-    onTeethToggle(tooth: ITooth): void {
-        console.log(tooth);
+    onSmearChange(smears: Array<number>): void {
+        if(!this.selectedTeeth.length){
+            this.selectedSmears = [];
+            console.log('Error: bla bla bla...')
+        }
     }
 
 }

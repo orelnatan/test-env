@@ -1,12 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-export interface ITooth {
-    id: number,
-    label: string,
-    disabled: boolean,
-    checked: boolean
-}
-
 @Component({
   selector: 'tooth',
   templateUrl: './tooth.component.html',
@@ -14,7 +7,10 @@ export interface ITooth {
 })
 
 export class Tooth {
-    @Input() tooth: ITooth;
+    @Input() id: number;
+    @Input() label: string;
+    @Input() disabled: boolean;
+    @Input() checked: boolean;
 
-    @Output() onChange: EventEmitter<ITooth> = new EventEmitter();
+    @Output() onChange: EventEmitter<number> = new EventEmitter();
 }

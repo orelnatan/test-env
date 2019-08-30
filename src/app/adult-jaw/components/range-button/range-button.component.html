@@ -1,7 +1,7 @@
 
 <div class="rangebutton-main">
     <button class="rangebutton-button" 
-        [ngClass]="{'active': !disabled, 'un-active': disabled, 'prassed': isPressed}"
+        [ngClass]="{'active': !disabled, 'un-active': disabled, 'prassed': pressed}"
         [disabled]="disabled" 
         (click)="onClick.emit()">
         
