@@ -11,7 +11,7 @@
                 [label]="tooth.label"
                 [checked]="selectedTeeth.indexOf(tooth.id) != -1"
                 (onChange)="
-                    handleChange(selectedTeeth, $event);
+                    isItemExist(selectedTeeth, $event) ? unSelectTooth($event) : selectTooth($event);
                     teethChange.emit(selectedTeeth)">
             </tooth>
         </div>
@@ -22,7 +22,7 @@
                 [label]="smear.label"  
                 [selected]="selectedSmears.indexOf(smear.id) != -1"
                 (onClick)="
-                    handleChange(selectedSmears, $event);
+                    isItemExist(selectedSmears, $event) ? unSelectSmear($event) : selectSmear($event);
                     smearChange.emit(selectedSmears)">
             </smear-button>
         </div>

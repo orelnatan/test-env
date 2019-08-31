@@ -15,6 +15,10 @@ interface IRange {
     range: Array<number>
 }
 
+const MAX_SMEARS_ALLOWED: number = 3;
+const NO_TOOTH_SELECTED_ALERT: string = "At least one tooth must be selected in order to choose a smear";
+const SMEARS_OVERFLOW_ALERT: string = `Maximum number of smears allowed is ${MAX_SMEARS_ALLOWED}`;
+
 @Component({
   selector: 'adult-jaw',
   templateUrl: './adult-jaw.component.html',
@@ -27,6 +31,7 @@ export class AdultJaw {
 
     @Output() teethChange: EventEmitter<number[]> = new EventEmitter();
     @Output() smearChange: EventEmitter<number[]> = new EventEmitter();
+    @Output() alert: EventEmitter<string> = new EventEmitter();
 
     teeth: Array<ITooth> = [
         {
@@ -243,23 +248,51 @@ export class AdultJaw {
         },
     ]
     
-    handleChange(collection: Array<number>, itemId: number): void {
-        collection.indexOf(
+    isItemExist(collection: Array<number>, itemId: number): boolean {
+        return collection.indexOf(
             itemId
-        ) == -1 ? this.selectItem(collection, itemId) : this.unSelectItem(collection, itemId);
+        ) != -1
     }
 
-    selectItem(collection: Array<number>, itemId: number): void {
-        collection.push(
-            itemId
+    selectTooth(toothId: number): void {
+        this.selectedTeeth.push(
+            toothId
         );
     }
 
-    unSelectItem(collection: Array<number>, itemId: number): void {
-        collection.splice(
-            collection.indexOf(itemId),
+    unSelectTooth(toothId: number): void {
+        this.selectedTeeth.splice(
+            this.selectedTeeth.indexOf(toothId),
             1
-        )
+        );
+
+        if(!this.selectedTeeth.length){
+            this.selectedSmears = [];
+            this.smearChange.emit(this.selectedSmears);
+        }
+    }
+
+    selectSmear(smearId: number): void {
+        if(!this.selectedTeeth.length) {
+            this.alert.emit(NO_TOOTH_SELECTED_ALERT);
+            return;
+        }
+
+        if(this.selectedSmears.length == MAX_SMEARS_ALLOWED) {
+            this.alert.emit(SMEARS_OVERFLOW_ALERT);
+            return;
+        }
+
+        this.selectedSmears.push(
+            smearId
+        );
+    }
+
+    unSelectSmear(smearId: number): void {
+        this.selectedSmears.splice(
+            this.selectedSmears.indexOf(smearId),
+            1
+        );
     }
 
     isTeethRangeMarked(range: Array<number>): boolean {
@@ -278,9 +311,9 @@ export class AdultJaw {
                 if(!pressed) {
                     this.selectedTeeth.indexOf(
                         toothId
-                    ) == -1 ? this.selectItem(this.selectedTeeth, toothId) : null; 
+                    ) == -1 ? this.selectTooth(toothId) : null; 
                 } else {
-                    this.unSelectItem(this.selectedTeeth, toothId);
+                    this.unSelectTooth(toothId);
                 }
             }
         );

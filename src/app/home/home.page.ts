@@ -11,16 +11,15 @@ export class Home {
     selectedSmears = [];
     
     onTeethChange(teeth: Array<number>): void {
-        if(!teeth.length) {
-            this.selectedSmears = [];
-        }
+        console.log(teeth);
     }
 
     onSmearChange(smears: Array<number>): void {
-        if(!this.selectedTeeth.length){
-            this.selectedSmears = [];
-            console.log('Error: bla bla bla...')
-        }
+        console.log(smears);
+    }
+
+    showAlert(jawAlert: string): void {
+        console.log(jawAlert);
     }
 
 }
