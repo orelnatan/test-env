@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { IJaw } from '../models/IJaw.model';
 
 interface ITooth {
     label: string;
@@ -26,11 +27,9 @@ const SMEARS_OVERFLOW_ALERT: string = `Maximum number of smears allowed is ${MAX
 })
 
 export class AdultJaw {
-    @Input() selectedTeeth: Array<number> = [];
-    @Input() selectedSmears: Array<number> = [];
+    @Input() dataSource: IJaw;
 
-    @Output() teethChange: EventEmitter<number[]> = new EventEmitter();
-    @Output() smearChange: EventEmitter<number[]> = new EventEmitter();
+    @Output() onChange: EventEmitter<IJaw> = new EventEmitter();
     @Output() alert: EventEmitter<string> = new EventEmitter();
 
     teeth: Array<ITooth> = [
@@ -255,42 +254,42 @@ export class AdultJaw {
     }
 
     selectTooth(toothId: number): void {
-        this.selectedTeeth.push(
+        this.dataSource.selectedTeeth.push(
             toothId
         );
     }
 
     unSelectTooth(toothId: number): void {
-        this.selectedTeeth.splice(
-            this.selectedTeeth.indexOf(toothId),
+        this.dataSource.selectedTeeth.splice(
+            this.dataSource.selectedTeeth.indexOf(toothId),
             1
         );
 
-        if(!this.selectedTeeth.length){
-            this.selectedSmears = [];
-            this.smearChange.emit(this.selectedSmears);
+        if(!this.dataSource.selectedTeeth.length){
+            this.dataSource.selectedSmears = [];
+            this.onChange.emit(this.dataSource);
         }
     }
 
     selectSmear(smearId: number): void {
-        if(!this.selectedTeeth.length) {
+        if(!this.dataSource.selectedTeeth.length) {
             this.alert.emit(NO_TOOTH_SELECTED_ALERT);
             return;
         }
 
-        if(this.selectedSmears.length == MAX_SMEARS_ALLOWED) {
+        if(this.dataSource.selectedSmears.length == MAX_SMEARS_ALLOWED) {
             this.alert.emit(SMEARS_OVERFLOW_ALERT);
             return;
         }
 
-        this.selectedSmears.push(
+        this.dataSource.selectedSmears.push(
             smearId
         );
     }
 
     unSelectSmear(smearId: number): void {
-        this.selectedSmears.splice(
-            this.selectedSmears.indexOf(smearId),
+        this.dataSource.selectedSmears.splice(
+            this.dataSource.selectedSmears.indexOf(smearId),
             1
         );
     }
@@ -298,7 +297,7 @@ export class AdultJaw {
     isTeethRangeMarked(range: Array<number>): boolean {
         return range.every(
             (value: number): boolean => { 
-                return this.selectedTeeth.indexOf(
+                return this.dataSource.selectedTeeth.indexOf(
                     value
                 ) != -1; 
             }
@@ -309,7 +308,7 @@ export class AdultJaw {
         range.forEach(
             (toothId: number) => {
                 if(!pressed) {
-                    this.selectedTeeth.indexOf(
+                    this.dataSource.selectedTeeth.indexOf(
                         toothId
                     ) == -1 ? this.selectTooth(toothId) : null; 
                 } else {
@@ -317,7 +316,7 @@ export class AdultJaw {
                 }
             }
         );
-        this.teethChange.emit(this.selectedTeeth);
+        this.onChange.emit(this.dataSource);
     }
 
 }

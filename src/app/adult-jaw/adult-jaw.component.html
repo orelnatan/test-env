@@ -9,10 +9,10 @@
             <tooth
                 [id]="tooth.id"
                 [label]="tooth.label"
-                [checked]="selectedTeeth.indexOf(tooth.id) != -1"
+                [checked]="dataSource.selectedTeeth.indexOf(tooth.id) != -1"
                 (onChange)="
-                    isItemExist(selectedTeeth, $event) ? unSelectTooth($event) : selectTooth($event);
-                    teethChange.emit(selectedTeeth)">
+                    isItemExist(dataSource.selectedTeeth, $event) ? unSelectTooth($event) : selectTooth($event);
+                    onChange.emit(dataSource)">
             </tooth>
         </div>
 
@@ -20,10 +20,10 @@
             <smear-button
                 [id]="smear.id" 
                 [label]="smear.label"  
-                [selected]="selectedSmears.indexOf(smear.id) != -1"
+                [selected]="dataSource.selectedSmears.indexOf(smear.id) != -1"
                 (onClick)="
-                    isItemExist(selectedSmears, $event) ? unSelectSmear($event) : selectSmear($event);
-                    smearChange.emit(selectedSmears)">
+                    isItemExist(dataSource.selectedSmears, $event) ? unSelectSmear($event) : selectSmear($event);
+                    onChange.emit(dataSource)">
             </smear-button>
         </div>
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IJaw } from '../models/IJaw.model';
 
 @Component({
   selector: 'home',
@@ -7,15 +8,13 @@ import { Component } from '@angular/core';
 })
 
 export class Home {
-    selectedTeeth = [];
-    selectedSmears = [];
-    
-    onTeethChange(teeth: Array<number>): void {
-        console.log(teeth);
+    jaw: IJaw = {
+        selectedTeeth: [11, 22, 41],
+        selectedSmears: [212, 876]
     }
-
-    onSmearChange(smears: Array<number>): void {
-        console.log(smears);
+    
+    handleChange(jaw: IJaw): void {
+        console.log(jaw);
     }
 
     showAlert(jawAlert: string): void {

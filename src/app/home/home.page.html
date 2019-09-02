@@ -4,10 +4,8 @@
         
         <div class="adultjaw-wrapper">
             <adult-jaw
-                [selectedTeeth]="selectedTeeth"
-                [selectedSmears]="selectedSmears" 
-                (teethChange)="onTeethChange($event)"
-                (smearChange)="onSmearChange($event)"
+                [dataSource]="jaw"
+                (onChange)="handleChange($event)"
                 (alert)="showAlert($event)">
             </adult-jaw>
         </div>
