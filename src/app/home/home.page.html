@@ -2,13 +2,18 @@
 <div class="home-main">
     <div class="home-body">
         
-        <div class="adultjaw-wrapper">
-            <adult-jaw
-                [dataSource]="jaw"
-                (onChange)="handleChange($event)"
-                (alert)="showAlert($event)">
-            </adult-jaw>
+        <div class="home-container">
+            <countries-table [countries]="countries"></countries-table>
         </div>
 
     </div>
 </div>
+
+
+<!-- 
+    <adult-jaw
+        [dataSource]="jaw"
+        (onChange)="handleChange($event)"
+        (alert)="showAlert($event)">
+    </adult-jaw>
+-->

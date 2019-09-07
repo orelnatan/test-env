@@ -1,0 +1,29 @@
+
+.colheader-main {
+    display: block;
+    text-align: center;
+
+    .colheader-header {
+        border-right: 3px solid #fff;
+    }
+
+    .colheader-subheaders {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-top: thin solid #fff;
+    }
+
+    .colheader-subheader {
+        width: 100%;
+        white-space: nowrap;
+        border-right: thin solid #fff;
+        padding: 7px 15px;
+
+        &:last-child {
+            border-right: 3px solid #fff;
+        }
+    }
+
+   
+}

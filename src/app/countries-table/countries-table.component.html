@@ -1,0 +1,33 @@
+
+<div class="countriestable-main">
+    <div class="countriestable-table" isOverflow>
+        <table cellspacing="0" cellpadding="0">
+            <thead>
+                <tr class="countriestable-continents">
+                    <th></th>
+                    <th *ngFor="let continent of continents" [attr.colspan]="continent.countries.length">
+                        <strong>{{continent.label}}</strong>
+                    </th> 
+                </tr>
+
+                <tr>
+                    <th></th>
+                    <th *ngFor="let country of getAllCountries()">
+                        <strong>{{country}}</strong>
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let property of properties; let i=index">
+                    <td class="countriestable-property">
+                        {{property}} 
+                    </td>
+                    <td *ngFor="let country of countries">
+                        {{country[objectKeys(country)[i]]}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

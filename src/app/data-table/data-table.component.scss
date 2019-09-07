@@ -1,0 +1,70 @@
+
+.datatable-main {
+    display: block;
+    width: 100%;
+    text-align: center;
+    
+    .datatable-body {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .table-wrapper {
+        display: block;
+        width: 100%;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        width: 100%;
+        text-align: center;
+    }
+
+    tr {
+        display: flex;
+        width: 100%;
+        padding: 10px 0px;
+    }
+
+    td {
+        text-align: center;
+        width: 100%;
+   //     min-width: 200px;
+    }
+
+    tbody {
+        tr:nth-child(odd) {
+            background-color: #dddddd;
+        }
+    }
+
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+
+.docstable-main {
+    display: block;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+    
+    .docstable-table {
+        position: relative;
+        display: block;
+        width: 100%;
+        min-height: 200px
+    }
+
+    .docstable-pagination {
+        display: block;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 1px;
+    }
+
+    .docstable-no-data-label {
+        position: fixed;
+        display: block;
+        color: gray;
+        font-weight: 700;
+        font-size: 13px;
+        opacity: 0.5;
+        padding-top: 60px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%)
+    }
+
+    a {
+        color: blue;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    table {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    thead {
+        width: 100%;
+        background: #E8E9EC;
+    }
+
+    tbody {
+        tr {        
+            &:nth-child(odd) {
+                background: #FFFFFF;
+            }
+    
+            &:nth-child(even) {
+                background: #F5F5F5;
+            }
+        }
+    }
+
+    tr {
+        height: 56px;
+    }
+
+    td, th {
+        text-align: center;
+        border-style: none;
+        white-space: nowrap;
+      //  min-width: 200px; // to enable overflowing...
+    }
+}

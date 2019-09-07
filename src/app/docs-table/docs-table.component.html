@@ -1,0 +1,32 @@
+
+<div class="docstable-main"  >
+    <div class="docstable-table" isOverflow>
+        <table cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th *ngFor="let property of properties">
+                        <strong>{{property}}</strong>
+                    </th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <tr *ngFor="let doc of docs | paginate: { itemsPerPage: 10, currentPage: pageNumber }">
+                    <td><a>{{doc.id}}</a></td>
+                    <td>{{doc.environment}}</td>
+                    <td>{{doc.type}}</td>
+                    <td>{{doc.vendor}}</td>
+                    <td>{{doc.date}}</td>
+                    <td>{{doc.number}}</td>
+                    <td>{{doc.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <span class="docstable-no-data-label" *ngIf="!docs.length">NO DATA FOUND</span>
+    </div>
+    
+    <div class="docstable-pagination" *ngIf="docs.length">
+        <pagination-controls (pageChange)="pageNumber=$event"></pagination-controls>
+    </div>
+</div>

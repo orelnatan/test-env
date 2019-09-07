@@ -1,0 +1,62 @@
+
+.countriestable-main {
+    display: block;
+    width: 100%;
+    border-radius: 15px;
+    font-size: 12px;
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+
+    .countriestable-table {
+        width: 100%;
+    }
+
+    .countriestable-continents {
+        font-size: 14px;
+    }
+
+    .countriestable-property {
+        background: #E8E9EC;
+        font-weight: 700;
+        border-bottom: 2px solid #FFFFFF; 
+    }
+
+    table {
+        width: 100%;
+    }
+
+    thead {
+        width: 100%;
+        background: #E8E9EC;
+
+        tr {            
+            th {
+                border-bottom: 2px solid #FFFFFF;
+                border-left: 1px solid #FFFFFF;
+                border-right: 1px solid #FFFFFF;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            &:nth-child(odd) {
+                background: #FFFFFF;
+            }
+    
+            &:nth-child(even) {
+                background: #F5F5F5;
+            }
+        }
+    }
+
+    tr {
+        height: 56px;
+    }
+
+    td, th {
+        text-align: center;
+        border-style: none;
+        white-space: nowrap;
+        padding: 0px 30px; // to enable overflowing...
+    }
+}
