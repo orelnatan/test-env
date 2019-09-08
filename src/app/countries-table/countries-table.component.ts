@@ -77,15 +77,15 @@ export class CountriesTable {
     objectKeys: Function = Object.keys;
 
     getAllCountries(): Array<string> {
-       let AllCountries: Array<string> = [];
+       let allCountries: Array<string> = [];
 
        this.continents.map((continent: IContinent) => {
            continent.countries.forEach(
                (country: string) => { 
-                    AllCountries.push(country);
+                    allCountries.push(country);
            });
        });
 
-        return AllCountries;
+        return allCountries;
     }
 }

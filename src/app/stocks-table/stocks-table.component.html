@@ -1,0 +1,35 @@
+
+<div class="stockstable-main">
+    <div class="stockstable-table" isOverflow>
+        <table cellspacing="0" cellpadding="0">
+            <thead>
+                <tr class="stockstable-companies">
+                    <th></th>
+                    <th *ngFor="let company of companies" [attr.colspan]="company.subsidiaries.length">
+                        <strong>{{company.label}}</strong>
+                    </th> 
+                </tr>
+
+                <tr>
+                    <th><strong>Stocks</strong></th>
+                    <th *ngFor="let subsidiary of getAllSubsidiaries()">
+                        <strong>{{subsidiary.label}}</strong>
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let i=index; let stock of stocks | paginate: { itemsPerPage: itemsPerPage, currentPage: pageNumber }">
+                    <th class="stockstable-stock-rowheader"><strong>{{stock}}</strong></th>
+                    <td *ngFor="let subsidiary of getAllSubsidiaries()">
+                        {{subsidiary.stocks[getIndexByPageNumber(i)].value}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="stockstable-pagination" *ngIf="companies.length">
+        <pagination-controls (pageChange)="pageNumber=$event"></pagination-controls>
+    </div>
+</div>

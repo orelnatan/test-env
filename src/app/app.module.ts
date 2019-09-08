@@ -16,6 +16,7 @@ import { SmearButton } from './adult-jaw/components/smear-button/smear-button.co
 import { AccordionTable } from './accordion-table/accordion-table.component';
 import { DocsTable } from './docs-table/docs-table.component';
 import { CountriesTable } from './countries-table/countries-table.component';
+import { StocksTable } from './stocks-table/stocks-table.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CountriesTable } from './countries-table/countries-table.component';
     AccordionTable,
     DocsTable,
     CountriesTable,
+    StocksTable,
     isOverflow,
   ],
   imports: [
