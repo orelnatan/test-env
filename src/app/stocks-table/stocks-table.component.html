@@ -1,7 +1,7 @@
 
 <div class="stockstable-main">
     <div class="stockstable-table" isOverflow>
-        <table cellspacing="0" cellpadding="0">
+        <table cellspacing="0" cellpadding="0" *ngIf="companies.length">
             <thead>
                 <tr class="stockstable-companies">
                     <th></th>
@@ -27,6 +27,8 @@
                 </tr>
             </tbody>
         </table>
+
+        <span class="docstable-no-data-label" *ngIf="!companies.length">NO DATA FOUND</span>
     </div>
 
     <div class="stockstable-pagination" *ngIf="companies.length">
