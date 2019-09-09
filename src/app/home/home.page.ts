@@ -9052,7 +9052,6 @@ export class Home {
         {id: 21222, environment: "Creativity", type: 'order', vendor: 'Sony', date: '04/11/17', number: 'PD3424234', price: '4,325 PDS'},
     ];
     
-    
     jaw: IJaw = {
         selectedTeeth: [11, 12, 13, 14, 15, 16,17, 18],
         selectedSmears: [212, 876]

@@ -1,32 +1,49 @@
 
 <div class="stockstable-main">
-    <div class="stockstable-table" isOverflow>
-        <table cellspacing="0" cellpadding="0" *ngIf="companies.length">
-            <thead>
-                <tr class="stockstable-companies">
-                    <th></th>
-                    <th *ngFor="let company of companies" [attr.colspan]="company.subsidiaries.length">
-                        <strong>{{company.label}}</strong>
-                    </th> 
-                </tr>
+    <div class="stockstable-table">
+        <div class="stockstable-rowheaders">
+            <table cellspacing="0" cellpadding="0" *ngIf="companies.length">
+                <thead>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th><strong>Stocks</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i=index; let stock of stocks | paginate: { itemsPerPage: itemsPerPage, currentPage: pageNumber }">
+                        <th class="stockstable-stock-rowheader"><strong>{{stock}}</strong></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-                <tr>
-                    <th><strong>Stocks</strong></th>
-                    <th *ngFor="let subsidiary of getAllSubsidiaries()">
-                        <strong>{{subsidiary.label}}</strong>
-                    </th>
-                </tr>
-            </thead>
+        <div class="stockstable-content" isOverflow>
+            <table cellspacing="0" cellpadding="0" *ngIf="companies.length">
+                <thead>
+                    <tr class="stockstable-companies">
+                        <th *ngFor="let company of companies" [attr.colspan]="company.subsidiaries.length">
+                            <strong>{{company.label}}</strong>
+                        </th> 
+                    </tr>
 
-            <tbody>
-                <tr *ngFor="let i=index; let stock of stocks | paginate: { itemsPerPage: itemsPerPage, currentPage: pageNumber }">
-                    <th class="stockstable-stock-rowheader"><strong>{{stock}}</strong></th>
-                    <td *ngFor="let subsidiary of getAllSubsidiaries()">
-                        {{subsidiary.stocks[getIndexByPageNumber(i)].value}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    <tr>
+                        <th *ngFor="let subsidiary of getAllSubsidiaries()">
+                            <strong>{{subsidiary.label}}</strong>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let i=index; let stock of stocks | paginate: { itemsPerPage: itemsPerPage, currentPage: pageNumber }">
+                        <td *ngFor="let subsidiary of getAllSubsidiaries()">
+                            {{subsidiary.stocks[getIndexByPageNumber(i)].value}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <span class="docstable-no-data-label" *ngIf="!companies.length">NO DATA FOUND</span>
     </div>

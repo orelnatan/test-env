@@ -8,9 +8,22 @@
 
     .stockstable-table {
         position: relative;
-        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
         width: 100%;
         min-height: 200px
+    }
+
+    .stockstable-rowheaders {
+        display: block;
+        min-height: 200px;
+    }
+
+    .stockstable-content {
+        display: block;
+        width: 100%;
+        min-height: 200px;
     }
 
     .stockstable-companies {

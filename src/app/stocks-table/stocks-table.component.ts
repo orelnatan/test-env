@@ -54,7 +54,7 @@ export class StocksTable {
     ];
 
     pageNumber: number = 1;
-    itemsPerPage: number = 10;
+    itemsPerPage: number = 9;
 
     getAllSubsidiaries(): Array<ISubsidiary> {
        let allSubsidiaries: Array<ISubsidiary> = [];
