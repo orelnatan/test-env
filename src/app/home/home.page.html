@@ -3,7 +3,18 @@
     <div class="home-body">
         
         <div class="home-container">
-            homee
+            <resources-list
+                [selectedResources]="selectedResources" 
+                [resources]="resources" 
+                (onChange)="selectedResources=$event">
+            </resources-list>
+        </div>
+
+        <div class="home-container">
+            <resources-table
+                [states]="states"
+                [resources]="selectedResources">
+            </resources-table>
         </div>
 
     </div>

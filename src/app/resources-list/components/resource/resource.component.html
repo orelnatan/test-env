@@ -1,0 +1,8 @@
+
+<div class="resource-main" 
+     (click)="onClick.emit(resource)" 
+     [ngStyle]="{'border-color': resource.color, 
+                 'background': selected ? resource.color : '#FFFFFF'}">
+
+    <span class="resource-label">{{resource.label}}</span> 
+</div>

@@ -1,0 +1,37 @@
+
+<div class="resourcestable-main">
+    <div class="resourcestable-body">
+        <div class="resourcestable-table-rowheaders">
+            <table cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th>States</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let state of states">
+                        <state-accordion [state]="state"></state-accordion>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="resourcestable-table-content" isOverflow>
+            <table cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th *ngFor="let resource of resources">
+                            {{resource.label}}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let resource of resources">
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

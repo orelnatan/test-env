@@ -1,27 +1,37 @@
 
-.countriestable-main {
+.resourcestable-main {
     display: block;
     width: 100%;
     border-radius: 15px;
     font-size: 12px;
     box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
 
-    .countriestable-table {
+    .resourcestable-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
         width: 100%;
+        min-height: 200px
     }
 
-    .countriestable-continents {
-        font-size: 14px;
-    }
-
-    .countriestable-property {
-        background: #EEEEEE;
-        font-weight: 700;
-        border-bottom: 2px solid #FFFFFF; 
+    .resourcestable-table-content {
+        display: block;
+        width: 100%;
     }
 
     table {
         width: 100%;
+    }
+
+    tr {
+        height: 56px;
+    }
+
+    td, th {
+        text-align: center;
+        border-style: none;
+        white-space: nowrap;
+        padding: 0px 40px; // to enable overflowing...
     }
 
     thead {
@@ -47,16 +57,5 @@
                 background: #F5F5F5;
             }
         }
-    }
-
-    tr {
-        height: 56px;
-    }
-
-    td, th {
-        text-align: center;
-        border-style: none;
-        white-space: nowrap;
-        padding: 0px 30px; // to enable overflowing...
     }
 }

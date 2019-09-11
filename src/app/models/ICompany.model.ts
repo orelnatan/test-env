@@ -1,7 +1,7 @@
 import { ISubsidiary } from './ISubsidiary.model';
 
 export interface ICompany {
-    id: string;
+    id: number;
     label: string;
     subsidiaries: Array<ISubsidiary>;
 }

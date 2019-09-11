@@ -1,0 +1,10 @@
+
+<div class="inputcheckbox-main">
+    <div class="inputcheckbox-box-wrapper">
+        <mat-checkbox
+            (change)="onChange.emit($event.checked)"
+            [disabled]="disabled" 
+            [checked]="checked">
+        </mat-checkbox>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+
+.resource-main {
+    display: block;
+    width: 150px;
+    border: 1px solid;
+    border-top: 6px solid;
+    padding: 18px 0px;
+    cursor: pointer;
+
+    .resource-label {
+        display: block;
+        text-align: center;
+        font-weight: 700;
+        width: 100%;
+    }
+}

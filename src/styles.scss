@@ -17,3 +17,11 @@ body {
     font-family: heeboRegular;
    // background: #70D6D8;
 }
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #039be5 !important;
+}
+
+.mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #039be5 !important;
+}

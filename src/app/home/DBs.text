@@ -1,4 +1,53 @@
 
+[
+  '{{repeat(50, 50)}}',
+ 	{
+      id: '{{integer(1000, 9999)}}',
+      label: '{{state()}}',
+      expended: false,
+      checked: false,
+    
+      cities: [
+      '{{repeat(8, 8)}}',
+       {
+          id: '{{integer(100, 999)}}',
+  		  label: '{{city()}}'
+        }
+      ]
+    }
+]
+
+
+[
+  '{{repeat(12, 12)}}',
+ 	{
+      id: '{{objectId()}}',
+      label: '{{company()}}',
+      color: '{{random("#63b598", "#ce7d78", "#ea9e70", "#a48a9e", "#c6e1e8", "#648177", "#f205e6" ,"#1c0365" ,"#14a9ad" ,"#4ca2f9" ,"#a4e43f" ,"#d298e2" ,"#6119d0","#9348af" ,"#01ac53" ,"#c5a4fb" ,"#996635","#b11573" ,"#4bb473" ,"#75d89e" ,"#935b6d" ,"#916988" ,"#513d98" ,"#aead3a", "#9e6d71", "#4b5bdc", "#0cd36d","#06e052", "#e3a481", "#0eb621", "#fc458e", "#b2db15", "#aa226d", "#792ed8", )}}',
+      selected: false,
+      
+      data: [
+      '{{repeat(50, 50)}}',
+       {
+         id: '{{guid()}}',
+         total: '{{integer(1000, 9999)}}',
+         values: [
+           '{{integer(10, 99)}}',
+           '{{integer(10, 99)}}',
+           '{{integer(10, 99)}}',
+           '{{integer(10, 99)}}',
+           '{{integer(10, 99)}}',
+           '{{integer(10, 99)}}',
+           '{{integer(10, 99)}}',
+           '{{integer(10, 99)}}'
+         ]
+        }
+      ]
+    }
+]
+
+
+
     companies: Array<ICompany> = [
         {
           "id": "5d74c34fa0d383afdd5bd121",

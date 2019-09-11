@@ -1,0 +1,17 @@
+
+.resourceslist-main {
+    display: block;
+    width: 100%;
+
+    .resourceslist-resources {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .resourceslist-resource {
+        margin: 10px;
+    }
+}

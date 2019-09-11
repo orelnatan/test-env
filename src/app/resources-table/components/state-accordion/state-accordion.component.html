@@ -1,0 +1,28 @@
+
+<div class="stateaccordion-main">
+    <table cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th class="stateaccordion-checkbox">
+                    <input-checkbox></input-checkbox>
+                </th>
+                <th class="stateaccordion-rowheader">
+                    <span>{{state.label}}</span>
+                </th>
+                <th class="stateaccordion-expand">
+                    <span *ngIf="!state.expended" class="stateaccordion-expand-icon material-icons" (click)="state.expended=!state.expended">expand_more</span>
+                    <span *ngIf="state.expended" class="stateaccordion-expand-icon material-icons" (click)="state.expended=!state.expended">expand_less</span> 
+                </th>  
+            </tr>
+        </thead>
+        <tbody *ngIf="state.expended">
+            <tr *ngFor="let city of state.cities">
+                <td></td>
+                <td>
+                    <strong>{{city.label}}</strong>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

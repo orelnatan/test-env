@@ -17,6 +17,12 @@ import { AccordionTable } from './accordion-table/accordion-table.component';
 import { DocsTable } from './docs-table/docs-table.component';
 import { CountriesTable } from './countries-table/countries-table.component';
 import { StocksTable } from './stocks-table/stocks-table.component';
+import { ResourcesTable } from './resources-table/resources-table.component';
+import { ResourcesList } from './resources-list/resources-list.component';
+import { Resource } from './resources-list/components/resource/resource.component';
+import { StateAccordion } from './resources-table/components/state-accordion/state-accordion.component';
+import { InputCheckbox } from './resources-table/components/state-accordion/components/input-checkbox/input-checkbox.component';
+import { ResourceAccordion } from './resources-table/components/resource-accordion/resource-accordion.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +31,17 @@ import { StocksTable } from './stocks-table/stocks-table.component';
     AdultJaw,
     RangeButton,
     Tooth,
+    InputCheckbox,
     SmearButton,
     AccordionTable,
     DocsTable,
     CountriesTable,
     StocksTable,
+    ResourcesTable,
+    StateAccordion,
+    ResourceAccordion,
+    ResourcesList,
+    Resource,
     isOverflow,
   ],
   imports: [

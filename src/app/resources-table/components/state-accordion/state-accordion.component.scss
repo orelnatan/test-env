@@ -1,0 +1,60 @@
+
+.stateaccordion-main {
+    display: block;
+    border-bottom: 2px solid #FFFFFF;
+
+    .stateaccordion-checkbox {
+        min-width: 45px;
+        padding-top: 7px;
+        border-left: 2px solid #FFFFFF;
+        border-right: 2px solid #FFFFFF; 
+    }
+
+    .stateaccordion-rowheader {
+        width: 100%;
+        padding: 0px 20px;
+    }
+
+    .stateaccordion-expand {
+        min-width: 45px;
+    }
+
+    .stateaccordion-expand-icon {
+        font-size: 30px;
+        padding-top: 10px;
+        cursor: pointer;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    thead {
+        width: 100%;
+        background: #EEEEEE;
+    }
+
+    tr {
+        height: 56px;
+    }
+
+    td, th {
+        text-align: center;
+        border-style: none;
+        white-space: nowrap;
+    }
+
+    tbody {
+        tr {
+            height: 40px;
+
+            &:nth-child(odd) {
+                background: #FFFFFF;
+            }
+    
+            &:nth-child(even) {
+                background: #F5F5F5;
+            }
+        }
+    }
+}

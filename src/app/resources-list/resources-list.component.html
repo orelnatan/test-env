@@ -1,0 +1,13 @@
+
+<div class="resourceslist-main">
+    <div class="resourceslist-resources">
+        <div class="resourceslist-resource" *ngFor="let resource of resources">
+            <resource 
+                [resource]="resource"
+                [selected]="isResourceExists(resource.id)" 
+                (onClick)="isResourceExists($event.id) ? unSelectResource($event) : selectResource($event);
+                           onChange.emit(selectedResources)">
+            </resource>
+        </div>
+    </div>
+</div>
