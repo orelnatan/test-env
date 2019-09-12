@@ -11,5 +11,5 @@ export class InputCheckbox {
     @Input() disabled: boolean;
     @Input() checked: boolean;
 
-    @Output() onChange: EventEmitter<boolean> = new EventEmitter();
+    @Output() onchange: EventEmitter<boolean> = new EventEmitter();
 }

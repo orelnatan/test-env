@@ -12,7 +12,10 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let state of states">
-                        <state-accordion [state]="state"></state-accordion>
+                        <state-accordion
+                             [state]="state"
+                             (checked)="checked.emit($event)">
+                        </state-accordion>
                     </tr>
                 </tbody>
             </table>

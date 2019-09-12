@@ -11,5 +11,5 @@ export class Resource {
     @Input() resource: IResource = {} as IResource;
     @Input() selected: boolean;
     
-    @Output() onClick: EventEmitter<IResource> = new EventEmitter();
+    @Output() onclick: EventEmitter<IResource> = new EventEmitter();
 }

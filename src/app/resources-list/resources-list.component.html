@@ -5,8 +5,8 @@
             <resource 
                 [resource]="resource"
                 [selected]="isResourceExists(resource.id)" 
-                (onClick)="isResourceExists($event.id) ? unSelectResource($event) : selectResource($event);
-                           onChange.emit(selectedResources)">
+                (onclick)="isResourceExists($event.id) ? unSelectResource($event) : selectResource($event);
+                           onchange.emit(selectedResources)">
             </resource>
         </div>
     </div>

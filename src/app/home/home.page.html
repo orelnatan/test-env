@@ -6,14 +6,15 @@
             <resources-list
                 [selectedResources]="selectedResources" 
                 [resources]="resources" 
-                (onChange)="selectedResources=$event">
+                (onchange)="selectedResources=$event">
             </resources-list>
         </div>
 
         <div class="home-container">
             <resources-table
                 [states]="states"
-                [resources]="selectedResources">
+                [resources]="selectedResources"
+                (checked)="handleChecked($event)">
             </resources-table>
         </div>
 

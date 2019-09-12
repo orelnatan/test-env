@@ -9,6 +9,8 @@ import { IResource } from '../models/IResource.model';
 })
 
 export class Home {
+    console: Console = console;
+
     states: Array<IState> = [
         {
           "id": 9690,
@@ -10501,4 +10503,7 @@ export class Home {
     selectedResources: Array<IResource> = [ ...this.resources ];
 
   
+    handleChecked(state: IState): void {
+        console.log(state);
+    }
 }

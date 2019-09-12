@@ -11,4 +11,5 @@ export class StateAccordion {
     @Input() state: IState = {} as IState;
     @Input() rowIndex: number;
 
+    @Output() checked: EventEmitter<IState> = new EventEmitter();
 }

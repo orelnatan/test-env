@@ -4,7 +4,9 @@
         <thead>
             <tr>
                 <th class="stateaccordion-checkbox">
-                    <input-checkbox></input-checkbox>
+                    <input-checkbox
+                        (onchange)="state.checked=$event; checked.emit(state)" >
+                    </input-checkbox>
                 </th>
                 <th class="stateaccordion-rowheader">
                     <span>{{state.label}}</span>

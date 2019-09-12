@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { IState } from '../models/IState.model';
 import { IResource } from '../models/IResource.model';
 
@@ -11,6 +11,8 @@ import { IResource } from '../models/IResource.model';
 export class ResourcesTable implements OnInit {
     @Input() states: Array<IState> = [];
     @Input() resources: Array<IResource> = [];
+
+    @Output() checked: EventEmitter<IState> = new EventEmitter();
 
     ngOnInit(): void {
         console.log(this.resources);

@@ -11,7 +11,7 @@ export class ResourcesList {
     @Input() resources: Array<IResource> = [];
     @Input() selectedResources: Array<IResource> = [];
 
-    @Output() onChange: EventEmitter<IResource[]> = new EventEmitter();
+    @Output() onchange: EventEmitter<IResource[]> = new EventEmitter();
 
     isResourceExists(resourceId: string): boolean {
         return this.selectedResources.map((resource) => resource.id).indexOf(
@@ -20,7 +20,7 @@ export class ResourcesList {
     }
 
     selectResource(resource: IResource): void {
-        this.selectedResources.push(
+        this.selectedResources.unshift(
             resource
         );
     }
