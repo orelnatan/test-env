@@ -10,16 +10,21 @@
                     <span>{{state.label}}</span>
                 </th>
                 <th class="stateaccordion-expand">
-                    <span *ngIf="!state.expended" class="stateaccordion-expand-icon material-icons" (click)="state.expended=!state.expended">expand_more</span>
-                    <span *ngIf="state.expended" class="stateaccordion-expand-icon material-icons" (click)="state.expended=!state.expended">expand_less</span> 
+                    <span 
+                        class="stateaccordion-expand-icon material-icons" 
+                        (click)="state.expanded=!state.expanded">
+                            {{state.expanded ? 'expand_less': 'expand_more'}}
+                    </span>
                 </th>  
             </tr>
         </thead>
-        <tbody *ngIf="state.expended">
+        <tbody *ngIf="state.expanded">
             <tr *ngFor="let city of state.cities">
                 <td></td>
                 <td>
-                    <strong>{{city.label}}</strong>
+                    <span>
+                        <strong>{{city.label}}</strong>
+                    </span>
                 </td>
                 <td></td>
             </tr>

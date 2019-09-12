@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { IState } from 'src/app/models/IState.model';
 import { IResource } from 'src/app/models/IResource.model';
 
 @Component({
@@ -9,6 +8,7 @@ import { IResource } from 'src/app/models/IResource.model';
 })
 
 export class ResourceAccordion {
-    @Input() resource: IResource = {} as IResource;
-
+   @Input() resource: IResource = {} as IResource;
+   @Input() dataIndex: number;
+   @Input() expanded: boolean;
 }

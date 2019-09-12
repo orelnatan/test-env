@@ -4,7 +4,7 @@
  	{
       id: '{{integer(1000, 9999)}}',
       label: '{{state()}}',
-      expended: false,
+      expanded: false,
       checked: false,
     
       cities: [

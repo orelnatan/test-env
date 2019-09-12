@@ -9,13 +9,11 @@ import { IResource } from '../models/IResource.model';
 })
 
 export class Home {
-    console: Console = console;
-
     states: Array<IState> = [
         {
           "id": 9690,
           "label": "Louisiana",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -55,7 +53,7 @@ export class Home {
         {
           "id": 6931,
           "label": "Florida",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -95,7 +93,7 @@ export class Home {
         {
           "id": 3181,
           "label": "Maine",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -135,7 +133,7 @@ export class Home {
         {
           "id": 7306,
           "label": "Guam",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -175,7 +173,7 @@ export class Home {
         {
           "id": 2008,
           "label": "Indiana",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -215,7 +213,7 @@ export class Home {
         {
           "id": 6912,
           "label": "West Virginia",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -255,7 +253,7 @@ export class Home {
         {
           "id": 7215,
           "label": "Rhode Island",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -295,7 +293,7 @@ export class Home {
         {
           "id": 6003,
           "label": "Colorado",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -335,7 +333,7 @@ export class Home {
         {
           "id": 6488,
           "label": "Missouri",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -375,7 +373,7 @@ export class Home {
         {
           "id": 3558,
           "label": "Palau",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -415,7 +413,7 @@ export class Home {
         {
           "id": 9422,
           "label": "Connecticut",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -455,7 +453,7 @@ export class Home {
         {
           "id": 3787,
           "label": "North Dakota",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -495,7 +493,7 @@ export class Home {
         {
           "id": 9705,
           "label": "Michigan",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -535,7 +533,7 @@ export class Home {
         {
           "id": 3359,
           "label": "Iowa",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -575,7 +573,7 @@ export class Home {
         {
           "id": 7006,
           "label": "Wisconsin",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -615,7 +613,7 @@ export class Home {
         {
           "id": 6037,
           "label": "Oklahoma",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -655,7 +653,7 @@ export class Home {
         {
           "id": 3621,
           "label": "Virginia",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -695,7 +693,7 @@ export class Home {
         {
           "id": 7778,
           "label": "Georgia",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -735,7 +733,7 @@ export class Home {
         {
           "id": 5288,
           "label": "New York",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -775,7 +773,7 @@ export class Home {
         {
           "id": 1612,
           "label": "Puerto Rico",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -815,7 +813,7 @@ export class Home {
         {
           "id": 6904,
           "label": "American Samoa",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -855,7 +853,7 @@ export class Home {
         {
           "id": 7474,
           "label": "Arkansas",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -895,7 +893,7 @@ export class Home {
         {
           "id": 4363,
           "label": "New Hampshire",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -935,7 +933,7 @@ export class Home {
         {
           "id": 8647,
           "label": "Nevada",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -975,7 +973,7 @@ export class Home {
         {
           "id": 5215,
           "label": "Montana",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1015,7 +1013,7 @@ export class Home {
         {
           "id": 9504,
           "label": "Tennessee",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1055,7 +1053,7 @@ export class Home {
         {
           "id": 5628,
           "label": "New Mexico",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1095,7 +1093,7 @@ export class Home {
         {
           "id": 8998,
           "label": "Alaska",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1135,7 +1133,7 @@ export class Home {
         {
           "id": 8074,
           "label": "Massachusetts",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1175,7 +1173,7 @@ export class Home {
         {
           "id": 8821,
           "label": "Alabama",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1215,7 +1213,7 @@ export class Home {
         {
           "id": 9653,
           "label": "Pennsylvania",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1255,7 +1253,7 @@ export class Home {
         {
           "id": 9107,
           "label": "Oregon",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1295,7 +1293,7 @@ export class Home {
         {
           "id": 7345,
           "label": "Texas",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1335,7 +1333,7 @@ export class Home {
         {
           "id": 1107,
           "label": "Federated States Of Micronesia",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1375,7 +1373,7 @@ export class Home {
         {
           "id": 8345,
           "label": "North Carolina",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1415,7 +1413,7 @@ export class Home {
         {
           "id": 7467,
           "label": "Utah",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1455,7 +1453,7 @@ export class Home {
         {
           "id": 5430,
           "label": "South Carolina",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1495,7 +1493,7 @@ export class Home {
         {
           "id": 4381,
           "label": "South Dakota",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1535,7 +1533,7 @@ export class Home {
         {
           "id": 9548,
           "label": "Minnesota",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1575,7 +1573,7 @@ export class Home {
         {
           "id": 3370,
           "label": "California",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1615,7 +1613,7 @@ export class Home {
         {
           "id": 1854,
           "label": "New Jersey",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1655,7 +1653,7 @@ export class Home {
         {
           "id": 9826,
           "label": "Vermont",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1695,7 +1693,7 @@ export class Home {
         {
           "id": 8357,
           "label": "Idaho",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1735,7 +1733,7 @@ export class Home {
         {
           "id": 8637,
           "label": "Arizona",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1775,7 +1773,7 @@ export class Home {
         {
           "id": 2807,
           "label": "Northern Mariana Islands",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1815,7 +1813,7 @@ export class Home {
         {
           "id": 1510,
           "label": "Kansas",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1855,7 +1853,7 @@ export class Home {
         {
           "id": 8955,
           "label": "Nebraska",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1895,7 +1893,7 @@ export class Home {
         {
           "id": 8779,
           "label": "Illinois",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1935,7 +1933,7 @@ export class Home {
         {
           "id": 7786,
           "label": "Marshall Islands",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {
@@ -1975,7 +1973,7 @@ export class Home {
         {
           "id": 1684,
           "label": "Delaware",
-          "expended": false,
+          "expanded": false,
           "checked": false,
           "cities": [
             {

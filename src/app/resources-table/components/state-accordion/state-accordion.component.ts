@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IState } from 'src/app/models/IState.model';
 
 @Component({
@@ -9,5 +9,6 @@ import { IState } from 'src/app/models/IState.model';
 
 export class StateAccordion {
     @Input() state: IState = {} as IState;
+    @Input() rowIndex: number;
 
 }

@@ -1,0 +1,23 @@
+
+<div class="resourceaccordion-main">
+    <table cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>
+                    <span>
+                        {{resource.data[dataIndex].total}}
+                    </span>
+                </th>
+            </tr>
+        </thead>
+        <tbody *ngIf="expanded">
+            <tr *ngFor="let value of resource.data[dataIndex].values">
+                <td>
+                    <span>
+                        {{value}}
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

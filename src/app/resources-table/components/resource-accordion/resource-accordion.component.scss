@@ -1,0 +1,52 @@
+
+.resourceaccordion-main {
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #FFFFFF;
+
+    table {
+        width: 100%;
+
+        span {
+            display: block;
+            width: 100%;
+            padding: 0px 10px;
+        }
+    }
+
+    thead {
+        width: 100%;
+
+        th {
+            border-left: 1px solid #FFFFFF;
+            border-right: 1px solid #FFFFFF;
+        }
+    }
+
+    tbody {
+        font-weight: 300;
+
+        tr {
+            height: 40px;
+
+            &:nth-child(odd) {
+                background: #FFFFFF;
+            }
+    
+            &:nth-child(even) {
+                background: #F5F5F5;
+            }
+        }
+    }
+
+    tr {
+        background: #EEEEEE;
+        height: 56px;
+    }
+
+    td, th {
+        text-align: center;
+        border-style: none;
+        white-space: nowrap;
+    }
+}

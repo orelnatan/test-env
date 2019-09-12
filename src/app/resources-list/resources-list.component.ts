@@ -26,6 +26,8 @@ export class ResourcesList {
     }
 
     unSelectResource(resource: IResource): void {
+        if(this.selectedResources.length == 1) return;
+        
         this.selectedResources.splice(
             this.selectedResources.indexOf(resource),
             1

@@ -5,7 +5,9 @@
             <table cellspacing="0" cellpadding="0">
                 <thead>
                     <tr>
-                        <th>States</th>
+                        <th>
+                            <span>States</span> 
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,17 +23,22 @@
                 <thead>
                     <tr>
                         <th *ngFor="let resource of resources">
-                            {{resource.label}}
+                            <span>{{resource.label}}</span>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let resource of resources">
-                        
+                    <tr *ngFor="let state of states; let i=index">
+                        <th *ngFor="let resource of resources">
+                            <resource-accordion 
+                                [resource]="resource" 
+                                [dataIndex]="i"
+                                [expanded]="state.expanded">
+                            </resource-accordion>
+                        </th>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-
