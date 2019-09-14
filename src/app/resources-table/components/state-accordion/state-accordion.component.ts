@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { IState } from 'src/app/models/IState.model';
 
 @Component({
@@ -7,22 +7,33 @@ import { IState } from 'src/app/models/IState.model';
   styleUrls: ['./state-accordion.component.scss']
 })
 
-export class StateAccordion {
+export class StateAccordion implements OnChanges {
     @Input() state: IState = {} as IState;
     @Input() rowIndex: number;
+    @Input() expanded: boolean;
+    @Input() checked: boolean;
 
-    @Output() checked: EventEmitter<IState> = new EventEmitter();
-    @Output() expanded: EventEmitter<IState> = new EventEmitter();
+    @Output() onchecked: EventEmitter<IState> = new EventEmitter();
+    @Output() onexpanded: EventEmitter<IState> = new EventEmitter();
 
     expand: boolean;
     minimize: boolean;
 
-    public minimizeTbody(): void {
+    ngOnChanges(): void {
+        if(this.expanded) {
+            this.expandTbody();
+            
+        } else if(!this.expanded && this.expand) {
+            this.minimizeTbody();
+        }
+    }
+
+    private minimizeTbody(): void {
         this.expand = false;
         this.minimize = true;
     }
 
-    public expandTbody(): void {
+    private expandTbody(): void {
         this.minimize = false;
         this.expand = true;
     }

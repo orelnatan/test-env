@@ -12,10 +12,12 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let state of states | paginate: { itemsPerPage: itemsPerPage, currentPage: pageNumber }">
-                        <state-accordion #stateAccRef
+                        <state-accordion
                              [state]="state"
-                             (checked)="handleChecked($event)"
-                             (expanded)="handleExpanded($event, stateAccRef)">
+                             [checked]="state.checked"
+                             [expanded]="state.expanded"
+                             (onchecked)="handleChecked($event)"
+                             (onexpanded)="handleExpanded($event)">
                         </state-accordion>
                     </tr>
                 </tbody>

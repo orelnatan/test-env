@@ -10,8 +10,8 @@
                 </th>
             </tr>
         </thead>
-        <tbody *ngIf="expanded">
-            <tr *ngFor="let value of resource.data[dataIndex].values">
+        <tbody>
+            <tr class="resourceaccordion-sub-row" *ngFor="let value of resource.data[dataIndex].values" [ngClass]="{'resourceaccordion-expanding': expand, 'resourceaccordion-minimizing': minimize}">
                 <td>
                     <span>
                         {{value}}

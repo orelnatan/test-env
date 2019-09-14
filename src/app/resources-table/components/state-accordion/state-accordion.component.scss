@@ -81,12 +81,12 @@
 
 
 .stateaccordion-expanding {
-    animation: expand 0.5s ease;
+    animation: expand 1s ease;
     animation-fill-mode: forwards;
 }
 
 .stateaccordion-minimizing {
-    animation: minimize 0.5s ease;
+    animation: minimize 1s ease;
 }
 
 @keyframes expand {
