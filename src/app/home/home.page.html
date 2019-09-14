@@ -14,7 +14,8 @@
             <resources-table
                 [states]="states"
                 [resources]="selectedResources"
-                (checked)="handleChecked($event)">
+                (checked)="handleChecked($event)"
+                (expanded)="handleExpanded($event)">
             </resources-table>
         </div>
 

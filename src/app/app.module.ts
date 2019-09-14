@@ -23,6 +23,7 @@ import { Resource } from './resources-list/components/resource/resource.componen
 import { StateAccordion } from './resources-table/components/state-accordion/state-accordion.component';
 import { InputCheckbox } from './resources-table/components/state-accordion/components/input-checkbox/input-checkbox.component';
 import { ResourceAccordion } from './resources-table/components/resource-accordion/resource-accordion.component';
+import { GeneralHeader } from './resources-table/components/general-header/general-header.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ResourceAccordion } from './resources-table/components/resource-accordi
     ResourceAccordion,
     ResourcesList,
     Resource,
+    GeneralHeader,
     isOverflow,
   ],
   imports: [

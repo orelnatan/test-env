@@ -10506,4 +10506,8 @@ export class Home {
     handleChecked(state: IState): void {
         console.log(state);
     }
+
+    handleExpanded(state: IState): void {
+        console.log(state);
+    }
 }

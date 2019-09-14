@@ -6,15 +6,16 @@
                 <thead>
                     <tr>
                         <th>
-                            <span>States</span> 
+                            <general-header></general-header>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let state of states">
-                        <state-accordion
+                    <tr *ngFor="let state of states | paginate: { itemsPerPage: itemsPerPage, currentPage: pageNumber }">
+                        <state-accordion #stateAccRef
                              [state]="state"
-                             (checked)="checked.emit($event)">
+                             (checked)="handleChecked($event)"
+                             (expanded)="handleExpanded($event, stateAccRef)">
                         </state-accordion>
                     </tr>
                 </tbody>
@@ -31,11 +32,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let state of states; let i=index">
+                    <tr *ngFor="let i=index; let state of states | paginate: { itemsPerPage: itemsPerPage, currentPage: pageNumber }">
                         <th *ngFor="let resource of resources">
                             <resource-accordion 
                                 [resource]="resource" 
-                                [dataIndex]="i"
+                                [dataIndex]="getIndexByPageNumber(i)"
                                 [expanded]="state.expanded">
                             </resource-accordion>
                         </th>
@@ -43,5 +44,8 @@
                 </tbody>
             </table>
         </div>
+    </div>
+    <div class="resourcestable-pagination">
+        <pagination-controls (pageChange)="pageNumber=$event"></pagination-controls>
     </div>
 </div>

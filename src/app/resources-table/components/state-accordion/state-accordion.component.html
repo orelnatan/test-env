@@ -5,7 +5,8 @@
             <tr>
                 <th class="stateaccordion-checkbox">
                     <input-checkbox
-                        (onchange)="state.checked=$event; checked.emit(state)" >
+                        (onchange)="checked.emit(state)"
+                        [checked]="state.checked">
                     </input-checkbox>
                 </th>
                 <th class="stateaccordion-rowheader">
@@ -14,14 +15,15 @@
                 <th class="stateaccordion-expand">
                     <span 
                         class="stateaccordion-expand-icon material-icons" 
-                        (click)="state.expanded=!state.expanded">
+                        (click)="expanded.emit(state)">
                             {{state.expanded ? 'expand_less': 'expand_more'}}
                     </span>
                 </th>  
             </tr>
         </thead>
-        <tbody *ngIf="state.expanded">
-            <tr *ngFor="let city of state.cities">
+        
+        <tbody>
+            <tr class="stateaccordion-sub-row" [ngClass]="{'stateaccordion-expanding': expand || state.expanded, 'stateaccordion-minimizing': minimize}" *ngFor="let city of state.cities">
                 <td></td>
                 <td>
                     <span>
@@ -33,3 +35,10 @@
         </tbody>
     </table>
 </div>
+
+
+<!-- <span 
+class="stateaccordion-expand-icon material-icons" 
+(click)="state.expanded ? minimizeTbody() : expandTbody()">
+    {{state.expanded ? 'expand_less': 'expand_more'}}
+</span> -->
