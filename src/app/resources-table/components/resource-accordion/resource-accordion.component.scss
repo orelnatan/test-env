@@ -64,12 +64,12 @@
 }
 
 .resourceaccordion-expanding {
-    animation: expand 1s ease;
+    animation: expand 0.5s ease;
     animation-fill-mode: forwards;
 }
 
 .resourceaccordion-minimizing {
-    animation: minimize 1s ease;
+    animation: minimize 0.5s ease;
 }
 
 @keyframes expand {
