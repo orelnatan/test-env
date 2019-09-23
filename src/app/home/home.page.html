@@ -11,12 +11,11 @@
         </div>
 
         <div class="home-container">
-            <resources-table
-                [states]="states"
+            <states-table
                 [resources]="selectedResources"
                 (onchecked)="handleChecked($event)"
                 (onexpanded)="handleExpanded($event)">
-            </resources-table>
+            </states-table>
         </div>
 
     </div>

@@ -26,19 +26,6 @@
         cursor: pointer;
     }
 
-    .stateaccordion-sub-row {
-        td {
-            position: relative;
-            overflow: hidden;
-        }
-    
-        span {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    }
-
     table {
         width: 100%;
 
@@ -60,7 +47,7 @@
 
     tbody {
         tr {
-            max-height: 40px;
+            height: 40px;
 
             &:nth-child(odd) {
                 background: #FFFFFF;
@@ -79,22 +66,3 @@
     }
 }
 
-
-.stateaccordion-expanding {
-    animation: expand 0.5s ease;
-    animation-fill-mode: forwards;
-}
-
-.stateaccordion-minimizing {
-    animation: minimize 0.5s ease;
-}
-
-@keyframes expand {
-	from { height: 0px; }
-	to { height: 40px; }
-}
-
-@keyframes minimize {
-	from { height: 40px; }
-	to { height: 0px; }
-}

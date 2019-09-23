@@ -17,13 +17,13 @@ import { AccordionTable } from './accordion-table/accordion-table.component';
 import { DocsTable } from './docs-table/docs-table.component';
 import { CountriesTable } from './countries-table/countries-table.component';
 import { StocksTable } from './stocks-table/stocks-table.component';
-import { ResourcesTable } from './resources-table/resources-table.component';
+import { StatesTable } from './states-table/states-table.component';
 import { ResourcesList } from './resources-list/resources-list.component';
 import { Resource } from './resources-list/components/resource/resource.component';
-import { StateAccordion } from './resources-table/components/state-accordion/state-accordion.component';
-import { InputCheckbox } from './resources-table/components/state-accordion/components/input-checkbox/input-checkbox.component';
-import { ResourceAccordion } from './resources-table/components/resource-accordion/resource-accordion.component';
-import { GeneralHeader } from './resources-table/components/general-header/general-header.component';
+import { StateAccordion } from './states-table/components/state-accordion/state-accordion.component';
+import { InputCheckbox } from './states-table/components/state-accordion/components/input-checkbox/input-checkbox.component';
+import { ResourceAccordion } from './states-table/components/resource-accordion/resource-accordion.component';
+import { GeneralHeader } from './states-table/components/general-header/general-header.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { GeneralHeader } from './resources-table/components/general-header/gener
     DocsTable,
     CountriesTable,
     StocksTable,
-    ResourcesTable,
+    StatesTable,
     StateAccordion,
     ResourceAccordion,
     ResourcesList,
